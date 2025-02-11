@@ -3538,3 +3538,22 @@ return setmetatable(Library, {
 		return rawget(Library, i:lower())
 	end
 })
+
+-- dalshe uzhe custom funki idut
+local minimizeButton = Library.mainFrame:object("ImageButton", {
+    Size = UDim2.new(0, 30, 0, 30),
+    Position = UDim2.new(1, -40, 0, 10),
+    BackgroundTransparency = 1,
+    Image = "rbxassetid://115806873680385", 
+    Theme = {ImageColor3 = "WeakText"}
+})
+
+local isMinimized = false
+minimizeButton.MouseButton1Click:Connect(function()
+    isMinimized = not isMinimized
+    if isMinimized then
+        Library.mainFrame:tween({Size = UDim2.new(0, 50, 0, 50), Length = 0.2}) 
+    else
+        Library.mainFrame:tween({Size = UDim2.fromOffset(600, 400), Length = 0.2}) 
+    end
+end)
