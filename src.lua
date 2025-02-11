@@ -409,7 +409,7 @@ function Library:create(options)
 	end
 
 	options = self:set_defaults({
-		Name = "Mercury",
+		Name = "Scarlet",
 		Size = UDim2.fromOffset(600, 400),
 		Theme = self.Themes[settings.Theme],
 		Link = "https://github.com/deeeity/mercury-lib"
@@ -862,7 +862,7 @@ function Library:create(options)
 	settingsTab:keybind{
 		Name = "Toggle Key",
 		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.Delete,
+		Keybind = Enum.KeyCode.LeftControl,
 		Callback = function()
 			self.Toggled = not self.Toggled
 			Library:show(self.Toggled)
